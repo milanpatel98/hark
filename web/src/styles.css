@@ -252,3 +252,5 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.pill.demo { display: flex; margin: 0 auto 26px; background: var(--y); color: var(--y-ink); }

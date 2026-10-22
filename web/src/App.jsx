@@ -222,12 +222,6 @@ function Home({ engine, onStart }) {
           <span className="mic-core"><Icon d={I.mic} size={32} /></span>
         </button>
         <p className="hint">{loading ? `${Math.round(engine.progress * 100)}%` : "Tap to caption"}</p>
-        <div className="chips">
-          <span className="chip" title="Audio never leaves this device"><Icon d={I.lock} /><small>Private</small></span>
-          <span className="chip" title="Works offline once loaded"><Icon d={I.plane} /><small>Offline</small></span>
-          <span className="chip" title="Learns your words from your fixes"><Icon d={I.spark} /><small>Learns</small></span>
-        </div>
-        <button className="pill ghost" onClick={() => onStart("sample")}><Icon d={I.play} size={14} />Try a sample</button>
       </div>
     </section>
   );
@@ -353,7 +347,7 @@ function You({ memory, onReset }) {
 }
 
 /* ---- results ----------------------------------------------------------------------------------------- */
-function Results({ data }) {
+function Results({ data, onStart }) {
   if (!data) return <section className="screen"><Top title="Results" /><div className="blank"><p>Loading…</p></div></section>;
   if (!data.speakers) return <section className="screen"><Top title="Results" /><div className="blank"><Icon d={I.bars} size={34} /><p>Benchmark in progress</p></div></section>;
   const { summary: t, speakers, first_run: f } = data;
@@ -372,6 +366,7 @@ function Results({ data }) {
         <div><b>{t.speakers}</b><small>accented speakers, held out</small></div>
       </div>
       <p className="note"><Icon d={I.check} size={16} />Never worse overall · learns only rare words</p>
+      <button className="pill demo" onClick={() => onStart("sample")}><Icon d={I.play} size={14} />Hear it learn a name</button>
       <h2 className="label"><Icon d={I.you} size={16} />Each speaker, words wrong before → after</h2>
       <div className="bars">
         {speakers.map((s) => (
@@ -489,7 +484,7 @@ export default function App() {
   else if (page === "saved" && route[1]) body = <Session s={sessions.find((x) => x.id === route[1])} onFix={fixSaved} onDelete={() => { const next = sessions.filter((x) => x.id !== route[1]); setSessions(next); store.set("hark.sessions", next); location.hash = "#/saved"; }} />;
   else if (page === "saved") body = <Saved sessions={sessions} />;
   else if (page === "you") body = <You memory={memory} onReset={() => { store.set("hark.memory", null); setMemJSON(null); setToast("Forgotten"); }} />;
-  else if (page === "results") body = <Results data={results} />;
+  else if (page === "results") body = <Results data={results} onStart={start} />;
   else body = <Home engine={engine} onStart={start} />;
 
   return (
@@ -497,7 +492,7 @@ export default function App() {
       {body}
       <Toast text={toast} />
       {page !== "live" && <Dock page={page} />}
-      <footer className="foot">© 2026 Milan Patel · MIT License</footer>
+      {page === "results" && <footer className="foot">© 2026 Milan Patel · MIT License</footer>}
     </div>
   );
 }
