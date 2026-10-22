@@ -81,7 +81,7 @@ function useEngine(memory) {
     }));
     w.ready = new Promise((resolve) => {
       w.onmessage = ({ data }) => {
-        if (data.type === "ready") { setState("ready"); setProgress(1); resolve(); }
+        if (data.type === "ready") { setState("ready"); setProgress(1); store.set("hark.loaded", true); resolve(); }
         if (data.type === "text") { setPartial(data.text); setStats({ audioSec: data.audioSec, busyMs: data.busyMs }); }
         if (data.type === "line") { setPartial(""); handlers.current.line?.(data); }
         if (data.type === "done") { setStats(data); handlers.current.done?.(data); }
@@ -164,6 +164,15 @@ async function playSample(url, onAudio, onLevel, signal) {
   audio.pause();
 }
 
+function downloadText(name, lines) {
+  const text = lines.map((l) => lc(l.fixed || l.shown)).join("\n\n") + "\n";
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], { type: "text/plain" }));
+  a.download = `${name.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "transcript"}.txt`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
 /* ---- pieces ------------------------------------------------------------------------------------------ */
 function Dock({ page }) {
   const items = [["", "Home", I.home], ["saved", "Saved", I.list], ["you", "Your voice", I.you], ["results", "Results", I.bars]];
@@ -222,6 +231,7 @@ function Home({ engine, onStart }) {
           <span className="mic-core"><Icon d={I.mic} size={32} /></span>
         </button>
         <p className="hint">{loading ? `${Math.round(engine.progress * 100)}%` : "Tap to caption"}</p>
+        {!loading && !store.get("hark.loaded", false) && <p className="hint small">First tap downloads the speech model once, 110 MB</p>}
       </div>
     </section>
   );
@@ -256,7 +266,12 @@ function Live({ engine, lines, partial, size, setSize, listening, onStop, onFix,
   useEffect(() => { box.current?.scrollTo({ top: box.current.scrollHeight, behavior: "smooth" }); }, [lines.length, partial]);
   return (
     <section className="screen live">
-      <Top back="#/" right={<span className={`rec ${listening ? "on" : ""}`}><i />{fmtTime(elapsed)}</span>} />
+      <Top back="#/" right={<>
+        <span className={`rec ${listening ? "on" : ""}`}><i />{fmtTime(elapsed)}</span>
+        {!listening && lines.length > 0 && (
+          <button className="round small" onClick={() => downloadText(lc(lines[0].fixed || lines[0].shown).split(" ").slice(0, 4).join(" "), lines)} aria-label="Download transcript"><Icon d={I.save} /></button>
+        )}
+      </>} />
       <div className={`captions s${size}`} ref={box} aria-live="polite">
         {!lines.length && !partial && <p className="empty">{engine.state === "loading" ? "Loading…" : listening ? "Listening…" : "Nothing yet"}</p>}
         {lines.map((l, i) => <Line key={l.id} line={l} onFix={(t) => onFix(i, t)} />)}
@@ -299,7 +314,10 @@ function Session({ s, onFix, onDelete }) {
   if (!s) return <section className="screen"><Top back="#/saved" /><div className="blank"><p>Not found</p></div></section>;
   return (
     <section className="screen">
-      <Top back="#/saved" title={s.title} right={<button className="round small" onClick={onDelete} aria-label="Delete"><Icon d={I.trash} /></button>} />
+      <Top back="#/saved" title={s.title} right={<>
+        <button className="round small" onClick={() => downloadText(s.title, s.lines)} aria-label="Download transcript"><Icon d={I.save} /></button>
+        <button className="round small" onClick={onDelete} aria-label="Delete"><Icon d={I.trash} /></button>
+      </>} />
       <div className="captions s1 page">
         {s.lines.map((l, i) => <Line key={l.id} line={l} onFix={(t) => onFix(s.id, i, t)} />)}
       </div>

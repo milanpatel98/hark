@@ -2,6 +2,8 @@
 
 **Live captions that run on your device and learn your voice from your corrections.**
 
+![Hark: home, a misheard name, the same sentence after two fixes, and the results](docs/hark.png)
+
 Small on-device speech models make far more mistakes on accented English than on the voices they were trained on. Hark captions speech live in the browser, with nothing sent to a server. When you correct a caption, it learns the words you say that it keeps getting wrong, and listens harder for them next time. Nothing is retrained; it learns from plain counts that stay in your browser.
 
 **[Try it](https://milanpatel98.github.io/hark/)**: works on a phone or a computer. "Try a sample" plays a real Arabic-accented speaker. Hark hears "Greyson … re entered". Correct it twice and the third time it writes "Gregson … reentered".
@@ -54,6 +56,8 @@ Per speaker, accuracy without any learning ranges from 7.2% words wrong (Korean,
 **Learning from corrections** (`hark/adapt.py`). A correction is lined up word by word against what Hark showed:
 - **Missed words** become a phrase list. During beam search, a hypothesis that spells one of those words earns a small bonus per word piece. A trie with fallback links (Aho-Corasick) means a partial match that goes nowhere gives its bonus back, so the list nudges and never forces.
 - **Exact mistakes** ("flip" → "Philip") become rewrite rules. A rule is only used once the same mistake has been corrected at least twice, and more often than the same words were confirmed right.
+
+**Transcripts.** Every session is saved in the browser, searchable, and can be downloaded as a text file, with your fixes in place.
 
 **Privacy.** Audio is processed in a Web Worker on the device. What Hark learns is a few kilobytes in `localStorage`, shown on the Your voice screen, with a button to erase it.
 
