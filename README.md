@@ -69,7 +69,7 @@ Per speaker, accuracy without any learning ranges from 7.2% words wrong (Korean,
 
 ## Run it
 
-Python 3.10+, Node 20+.
+Python 3.11+, Node 20+.
 
 ```bash
 git clone https://github.com/milanpatel98/hark.git && cd hark

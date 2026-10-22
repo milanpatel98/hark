@@ -2,7 +2,7 @@
 name = "hark"
 version = "0.1.0"
 description = "Live captions that run on the device and learn a speaker's words from their corrections."
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = { text = "MIT" }
 dependencies = ["numpy>=1.24", "onnxruntime==1.29.0", "soundfile>=0.12", "scipy>=1.10"]
 
