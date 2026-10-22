@@ -1,12 +1,12 @@
 :root {
-  --bg: #232427;
-  --panel: #2f3135;
-  --panel-2: #3a3c41;
-  --cap: #1a1b1d;
+  --bg: #18191b;
+  --panel: #24262a;
+  --panel-2: #2e3035;
+  --cap: #111214;
   --ink: #ffffff;
   --soft: #a9adb4;
   --faint: #6f737a;
-  --line: #44464b;
+  --line: #36383d;
   --y: #ffd23f;
   --y-ink: #1d1d1f;
   --red: #ff5a5a;
@@ -230,7 +230,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .dock {
   position: fixed; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom)); transform: translateX(-50%);
   width: min(360px, calc(100% - 40px)); height: 56px; border-radius: 999px;
-  background: rgba(47, 49, 53, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: rgba(36, 38, 42, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   display: flex; justify-content: space-around; align-items: center;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35); z-index: 10;
 }
