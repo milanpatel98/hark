@@ -1,0 +1,77 @@
+{
+ "grid": [
+  {
+   "bonus": 1.0,
+   "min_phrase": 1,
+   "errors_before": 768,
+   "errors_after": 776,
+   "learned_seen": 271,
+   "learned_gain": 13
+  },
+  {
+   "bonus": 1.0,
+   "min_phrase": 2,
+   "errors_before": 768,
+   "errors_after": 765,
+   "learned_seen": 81,
+   "learned_gain": 10
+  },
+  {
+   "bonus": 1.5,
+   "min_phrase": 1,
+   "errors_before": 768,
+   "errors_after": 769,
+   "learned_seen": 262,
+   "learned_gain": 17
+  },
+  {
+   "bonus": 1.5,
+   "min_phrase": 2,
+   "errors_before": 768,
+   "errors_after": 765,
+   "learned_seen": 81,
+   "learned_gain": 10
+  },
+  {
+   "bonus": 2.0,
+   "min_phrase": 1,
+   "errors_before": 768,
+   "errors_after": 776,
+   "learned_seen": 263,
+   "learned_gain": 21
+  },
+  {
+   "bonus": 2.0,
+   "min_phrase": 2,
+   "errors_before": 768,
+   "errors_after": 762,
+   "learned_seen": 81,
+   "learned_gain": 13
+  },
+  {
+   "bonus": 3.0,
+   "min_phrase": 1,
+   "errors_before": 768,
+   "errors_after": 832,
+   "learned_seen": 286,
+   "learned_gain": 22
+  },
+  {
+   "bonus": 3.0,
+   "min_phrase": 2,
+   "errors_before": 768,
+   "errors_after": 764,
+   "learned_seen": 81,
+   "learned_gain": 14
+  }
+ ],
+ "chosen": {
+  "bonus": 3.0,
+  "min_phrase": 2,
+  "min_rule": 2
+ },
+ "dev_speakers": [
+  "ABA",
+  "PNV"
+ ]
+}

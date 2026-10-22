@@ -1,0 +1,122 @@
+{
+ "grid": [
+  {
+   "bonus": 1.5,
+   "min_phrase": 1,
+   "max_zipf": 4.0,
+   "errors_before": 768,
+   "errors_after": 773,
+   "learned_seen": 9,
+   "learned_gain": 1
+  },
+  {
+   "bonus": 1.5,
+   "min_phrase": 1,
+   "max_zipf": 5.0,
+   "errors_before": 768,
+   "errors_after": 769,
+   "learned_seen": 28,
+   "learned_gain": 3
+  },
+  {
+   "bonus": 1.5,
+   "min_phrase": 2,
+   "max_zipf": 4.0,
+   "errors_before": 768,
+   "errors_after": 765,
+   "learned_seen": 0,
+   "learned_gain": 0
+  },
+  {
+   "bonus": 1.5,
+   "min_phrase": 2,
+   "max_zipf": 5.0,
+   "errors_before": 768,
+   "errors_after": 766,
+   "learned_seen": 1,
+   "learned_gain": 0
+  },
+  {
+   "bonus": 2.0,
+   "min_phrase": 1,
+   "max_zipf": 4.0,
+   "errors_before": 768,
+   "errors_after": 774,
+   "learned_seen": 9,
+   "learned_gain": 2
+  },
+  {
+   "bonus": 2.0,
+   "min_phrase": 1,
+   "max_zipf": 5.0,
+   "errors_before": 768,
+   "errors_after": 774,
+   "learned_seen": 28,
+   "learned_gain": 4
+  },
+  {
+   "bonus": 2.0,
+   "min_phrase": 2,
+   "max_zipf": 4.0,
+   "errors_before": 768,
+   "errors_after": 766,
+   "learned_seen": 0,
+   "learned_gain": 0
+  },
+  {
+   "bonus": 2.0,
+   "min_phrase": 2,
+   "max_zipf": 5.0,
+   "errors_before": 768,
+   "errors_after": 766,
+   "learned_seen": 1,
+   "learned_gain": 0
+  },
+  {
+   "bonus": 3.0,
+   "min_phrase": 1,
+   "max_zipf": 4.0,
+   "errors_before": 768,
+   "errors_after": 788,
+   "learned_seen": 9,
+   "learned_gain": 3
+  },
+  {
+   "bonus": 3.0,
+   "min_phrase": 1,
+   "max_zipf": 5.0,
+   "errors_before": 768,
+   "errors_after": 803,
+   "learned_seen": 28,
+   "learned_gain": 6
+  },
+  {
+   "bonus": 3.0,
+   "min_phrase": 2,
+   "max_zipf": 4.0,
+   "errors_before": 768,
+   "errors_after": 764,
+   "learned_seen": 0,
+   "learned_gain": 0
+  },
+  {
+   "bonus": 3.0,
+   "min_phrase": 2,
+   "max_zipf": 5.0,
+   "errors_before": 768,
+   "errors_after": 766,
+   "learned_seen": 1,
+   "learned_gain": 0
+  }
+ ],
+ "chosen": {
+  "bonus": 3.0,
+  "min_phrase": 2,
+  "max_zipf": 4.0,
+  "min_rule": 2
+ },
+ "dev_speakers": [
+  "ABA",
+  "PNV"
+ ]
+}

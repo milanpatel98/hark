@@ -1,0 +1,26 @@
+{
+  "name": "hark-site",
+  "version": "1.0.0",
+  "description": "Hark: live captions that learn your voice",
+  "scripts": {
+    "copyort": "node -e \"const fs=require('fs');fs.mkdirSync('public/ort',{recursive:true});for(const f of ['ort-wasm-simd-threaded.wasm','ort-wasm-simd-threaded.mjs'])fs.copyFileSync('node_modules/onnxruntime-web/dist/'+f,'public/ort/'+f)\"",
+    "predev": "npm run copyort",
+    "prebuild": "npm run copyort",
+    "dev": "vite --port 5190",
+    "build": "vite build",
+    "test": "node test/parity.mjs"
+  },
+  "author": "Milan Patel",
+  "license": "MIT",
+  "dependencies": {
+    "onnxruntime-web": "1.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.10"
+  },
+  "type": "module",
+  "private": true
+}

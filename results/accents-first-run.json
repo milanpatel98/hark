@@ -1,0 +1,2388 @@
+{
+ "settings": {
+  "bonus": 3.0,
+  "min_rule": 2,
+  "min_phrase": 2,
+  "adapt": 200,
+  "test": 300,
+  "checkpoints": [
+   0,
+   25,
+   50,
+   100,
+   200
+  ],
+  "lead_seconds": 0.66
+ },
+ "speakers": [
+  {
+   "speaker": "ABA",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 422,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 425,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 426,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 426,
+      "words": 2653,
+      "learned_seen": 2,
+      "learned_right_before": 1,
+      "learned_right_after": 2
+     },
+     "200": {
+      "errors": 426,
+      "words": 2653,
+      "learned_seen": 69,
+      "learned_right_before": 45,
+      "learned_right_after": 48
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 422,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 424,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 424,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 424,
+      "words": 2653,
+      "learned_seen": 2,
+      "learned_right_before": 1,
+      "learned_right_after": 1
+     },
+     "200": {
+      "errors": 419,
+      "words": 2653,
+      "learned_seen": 69,
+      "learned_right_before": 45,
+      "learned_right_after": 53
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 422,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 425,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 426,
+      "words": 2653,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 426,
+      "words": 2653,
+      "learned_seen": 2,
+      "learned_right_before": 1,
+      "learned_right_after": 2
+     },
+     "200": {
+      "errors": 419,
+      "words": 2653,
+      "learned_seen": 69,
+      "learned_right_before": 45,
+      "learned_right_after": 57
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 20,
+     "rules": 5,
+     "examples": [
+      [
+       "FLIP",
+       "PHILIP"
+      ],
+      [
+       "I AM",
+       "I'M"
+      ],
+      [
+       "DIDN'T",
+       "DID NOT"
+      ],
+      [
+       "BEER",
+       "PIERRE"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "PIERRE",
+      "GREGSON",
+      "WERE",
+      "EILEEN",
+      "DOWN",
+      "DID",
+      "NOT",
+      "BOW",
+      "HER",
+      "I'M",
+      "FOREVER"
+     ]
+    },
+    "rules": {
+     "phrases": 20,
+     "rules": 4,
+     "examples": [
+      [
+       "FLIP",
+       "PHILIP"
+      ],
+      [
+       "I AM",
+       "I'M"
+      ],
+      [
+       "DIDN'T",
+       "DID NOT"
+      ],
+      [
+       "BEER",
+       "PIERRE"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "I'M",
+      "WERE",
+      "PIERRE",
+      "GREGSON",
+      "EILEEN",
+      "DOWN",
+      "JEANNE",
+      "DID",
+      "NOT",
+      "BOW",
+      "HER"
+     ]
+    },
+    "both": {
+     "phrases": 20,
+     "rules": 5,
+     "examples": [
+      [
+       "FLIP",
+       "PHILIP"
+      ],
+      [
+       "I AM",
+       "I'M"
+      ],
+      [
+       "DIDN'T",
+       "DID NOT"
+      ],
+      [
+       "BEER",
+       "PIERRE"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "PIERRE",
+      "GREGSON",
+      "WERE",
+      "EILEEN",
+      "DOWN",
+      "DID",
+      "NOT",
+      "BOW",
+      "HER",
+      "I'M",
+      "FOREVER"
+     ]
+    }
+   },
+   "seconds": 115.8,
+   "accent": "Arabic",
+   "sex": "M",
+   "split": "dev"
+  },
+  {
+   "speaker": "SKA",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 1,
+      "learned_right_before": 0,
+      "learned_right_after": 1
+     },
+     "50": {
+      "errors": 618,
+      "words": 2631,
+      "learned_seen": 24,
+      "learned_right_before": 15,
+      "learned_right_after": 19
+     },
+     "100": {
+      "errors": 614,
+      "words": 2631,
+      "learned_seen": 31,
+      "learned_right_before": 16,
+      "learned_right_after": 23
+     },
+     "200": {
+      "errors": 649,
+      "words": 2631,
+      "learned_seen": 104,
+      "learned_right_before": 70,
+      "learned_right_after": 78
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 1,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 24,
+      "learned_right_before": 15,
+      "learned_right_after": 15
+     },
+     "100": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 31,
+      "learned_right_before": 16,
+      "learned_right_after": 16
+     },
+     "200": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 104,
+      "learned_right_before": 70,
+      "learned_right_after": 70
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 622,
+      "words": 2631,
+      "learned_seen": 1,
+      "learned_right_before": 0,
+      "learned_right_after": 1
+     },
+     "50": {
+      "errors": 618,
+      "words": 2631,
+      "learned_seen": 24,
+      "learned_right_before": 15,
+      "learned_right_after": 19
+     },
+     "100": {
+      "errors": 614,
+      "words": 2631,
+      "learned_seen": 31,
+      "learned_right_before": 16,
+      "learned_right_after": 23
+     },
+     "200": {
+      "errors": 649,
+      "words": 2631,
+      "learned_seen": 104,
+      "learned_right_before": 70,
+      "learned_right_after": 78
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 29,
+     "rules": 5,
+     "examples": [
+      [
+       "FLIP",
+       "PHILIP"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "GREYSON",
+       "GREGSON"
+      ],
+      [
+       "STARTED",
+       "STARED"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "GREGSON",
+      "WERE",
+      "JEANNE",
+      "PIERRE",
+      "I'M",
+      "WILL",
+      "FOREVER",
+      "BEYOND",
+      "LETTER",
+      "HER",
+      "HIM"
+     ]
+    },
+    "rules": {
+     "phrases": 29,
+     "rules": 5,
+     "examples": [
+      [
+       "FLIP",
+       "PHILIP"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "STARTED",
+       "STARED"
+      ],
+      [
+       "JEAN",
+       "JEANNE"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "JEANNE",
+      "GREGSON",
+      "WERE",
+      "BEYOND",
+      "HER",
+      "EILEEN",
+      "PIERRE",
+      "I'M",
+      "WILL",
+      "FOREVER",
+      "LETTER"
+     ]
+    },
+    "both": {
+     "phrases": 29,
+     "rules": 5,
+     "examples": [
+      [
+       "FLIP",
+       "PHILIP"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "GREYSON",
+       "GREGSON"
+      ],
+      [
+       "STARTED",
+       "STARED"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "GREGSON",
+      "WERE",
+      "JEANNE",
+      "PIERRE",
+      "I'M",
+      "WILL",
+      "FOREVER",
+      "BEYOND",
+      "LETTER",
+      "HER",
+      "HIM"
+     ]
+    }
+   },
+   "seconds": 92.9,
+   "accent": "Arabic",
+   "sex": "F",
+   "split": "test"
+  },
+  {
+   "speaker": "BWC",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 651,
+      "words": 2644,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 651,
+      "words": 2644,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 653,
+      "words": 2644,
+      "learned_seen": 5,
+      "learned_right_before": 4,
+      "learned_right_after": 5
+     },
+     "100": {
+      "errors": 653,
+      "words": 2644,
+      "learned_seen": 34,
+      "learned_right_before": 22,
+      "learned_right_after": 26
+     },
+     "200": {
+      "errors": 673,
+      "words": 2644,
+      "learned_seen": 97,
+      "learned_right_before": 59,
+      "learned_right_after": 71
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 651,
+      "words": 2644,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 651,
+      "words": 2644,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 651,
+      "words": 2644,
+      "learned_seen": 5,
+      "learned_right_before": 4,
+      "learned_right_after": 4
+     },
+     "100": {
+      "errors": 651,
+      "words": 2644,
+      "learned_seen": 34,
+      "learned_right_before": 22,
+      "learned_right_after": 22
+     },
+     "200": {
+      "errors": 649,
+      "words": 2644,
+      "learned_seen": 97,
+      "learned_right_before": 59,
+      "learned_right_after": 60
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 651,
+      "words": 2644,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 651,
+      "words": 2644,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 653,
+      "words": 2644,
+      "learned_seen": 5,
+      "learned_right_before": 4,
+      "learned_right_after": 5
+     },
+     "100": {
+      "errors": 653,
+      "words": 2644,
+      "learned_seen": 34,
+      "learned_right_before": 22,
+      "learned_right_after": 26
+     },
+     "200": {
+      "errors": 673,
+      "words": 2644,
+      "learned_seen": 97,
+      "learned_right_before": 59,
+      "learned_right_after": 67
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 27,
+     "rules": 5,
+     "examples": [
+      [
+       "THEIR",
+       "THE"
+      ],
+      [
+       "JENNY",
+       "JEANNE"
+      ],
+      [
+       "PHILP",
+       "PHILIP"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "LETTER",
+      "GREGSON",
+      "HAVE",
+      "EILEEN",
+      "NOT",
+      "TRAIL",
+      "PHIL",
+      "EXCLAIMED",
+      "MET",
+      "THEIR",
+      "PHILIP"
+     ]
+    },
+    "rules": {
+     "phrases": 26,
+     "rules": 2,
+     "examples": [
+      [
+       "JENNY",
+       "JEANNE"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "GREGSON",
+      "HAVE",
+      "LETTER",
+      "EILEEN",
+      "NOT",
+      "WERE",
+      "TRAIL",
+      "PHIL",
+      "EXCLAIMED",
+      "MET",
+      "THEIR"
+     ]
+    },
+    "both": {
+     "phrases": 27,
+     "rules": 5,
+     "examples": [
+      [
+       "THEIR",
+       "THE"
+      ],
+      [
+       "JENNY",
+       "JEANNE"
+      ],
+      [
+       "PHILP",
+       "PHILIP"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "LETTER",
+      "GREGSON",
+      "HAVE",
+      "EILEEN",
+      "NOT",
+      "TRAIL",
+      "PHIL",
+      "EXCLAIMED",
+      "MET",
+      "THEIR",
+      "PHILIP"
+     ]
+    }
+   },
+   "seconds": 111.3,
+   "accent": "Mandarin",
+   "sex": "M",
+   "split": "test"
+  },
+  {
+   "speaker": "LXC",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 688,
+      "words": 2651,
+      "learned_seen": 2,
+      "learned_right_before": 2,
+      "learned_right_after": 2
+     },
+     "100": {
+      "errors": 690,
+      "words": 2651,
+      "learned_seen": 4,
+      "learned_right_before": 2,
+      "learned_right_after": 2
+     },
+     "200": {
+      "errors": 695,
+      "words": 2651,
+      "learned_seen": 59,
+      "learned_right_before": 44,
+      "learned_right_after": 49
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 2,
+      "learned_right_before": 2,
+      "learned_right_after": 2
+     },
+     "100": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 4,
+      "learned_right_before": 2,
+      "learned_right_after": 2
+     },
+     "200": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 59,
+      "learned_right_before": 44,
+      "learned_right_after": 44
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 678,
+      "words": 2651,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 688,
+      "words": 2651,
+      "learned_seen": 2,
+      "learned_right_before": 2,
+      "learned_right_after": 2
+     },
+     "100": {
+      "errors": 690,
+      "words": 2651,
+      "learned_seen": 4,
+      "learned_right_before": 2,
+      "learned_right_after": 2
+     },
+     "200": {
+      "errors": 695,
+      "words": 2651,
+      "learned_seen": 59,
+      "learned_right_before": 44,
+      "learned_right_after": 49
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 28,
+     "rules": 3,
+     "examples": [
+      [
+       "I WILL",
+       "I'LL"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "SCENES",
+       "THINGS"
+      ]
+     ],
+     "top_words": [
+      "WERE",
+      "JEANNE",
+      "EILEEN",
+      "FIRE",
+      "BOW",
+      "TRAIL",
+      "I'LL",
+      "FOREVER",
+      "GREGSON",
+      "I'M",
+      "LIKE",
+      "TURNS"
+     ]
+    },
+    "rules": {
+     "phrases": 27,
+     "rules": 6,
+     "examples": [
+      [
+       "JEAN",
+       "JEANNE"
+      ],
+      [
+       "LEAST",
+       "THIS"
+      ],
+      [
+       "I WILL",
+       "I'LL"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "SCENES",
+       "THINGS"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "WERE",
+      "GREGSON",
+      "EILEEN",
+      "FIRE",
+      "TRAIL",
+      "I'LL",
+      "FOREVER",
+      "I'M",
+      "LIKE",
+      "TURNS",
+      "PHILIP"
+     ]
+    },
+    "both": {
+     "phrases": 28,
+     "rules": 3,
+     "examples": [
+      [
+       "I WILL",
+       "I'LL"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "SCENES",
+       "THINGS"
+      ]
+     ],
+     "top_words": [
+      "WERE",
+      "JEANNE",
+      "EILEEN",
+      "FIRE",
+      "BOW",
+      "TRAIL",
+      "I'LL",
+      "FOREVER",
+      "GREGSON",
+      "I'M",
+      "LIKE",
+      "TURNS"
+     ]
+    }
+   },
+   "seconds": 112.9,
+   "accent": "Mandarin",
+   "sex": "F",
+   "split": "test"
+  },
+  {
+   "speaker": "ASI",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 237,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "200": {
+      "errors": 244,
+      "words": 2654,
+      "learned_seen": 1,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "200": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 1,
+      "learned_right_before": 0,
+      "learned_right_after": 1
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 236,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 237,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "200": {
+      "errors": 242,
+      "words": 2654,
+      "learned_seen": 1,
+      "learned_right_before": 0,
+      "learned_right_after": 1
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 9,
+     "rules": 5,
+     "examples": [
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "I AM",
+       "I'M"
+      ],
+      [
+       "ELLEN",
+       "EILEEN"
+      ],
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "EILEEN",
+      "FOREVER",
+      "I'M",
+      "JEANNE",
+      "PIERRE",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "FOREMAN",
+      "TOMORROW"
+     ]
+    },
+    "rules": {
+     "phrases": 9,
+     "rules": 6,
+     "examples": [
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "JEAN",
+       "JEANNE"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "I AM",
+       "I'M"
+      ],
+      [
+       "ELLEN",
+       "EILEEN"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "EILEEN",
+      "PIERRE",
+      "FOREVER",
+      "I'M",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "FOREMAN",
+      "TOMORROW"
+     ]
+    },
+    "both": {
+     "phrases": 9,
+     "rules": 5,
+     "examples": [
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "I AM",
+       "I'M"
+      ],
+      [
+       "ELLEN",
+       "EILEEN"
+      ],
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "EILEEN",
+      "FOREVER",
+      "I'M",
+      "JEANNE",
+      "PIERRE",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "FOREMAN",
+      "TOMORROW"
+     ]
+    }
+   },
+   "seconds": 91.4,
+   "accent": "Hindi",
+   "sex": "M",
+   "split": "test"
+  },
+  {
+   "speaker": "SVBI",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 279,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "200": {
+      "errors": 277,
+      "words": 2654,
+      "learned_seen": 2,
+      "learned_right_before": 0,
+      "learned_right_after": 1
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "200": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 2,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 278,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 279,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "200": {
+      "errors": 277,
+      "words": 2654,
+      "learned_seen": 2,
+      "learned_right_before": 0,
+      "learned_right_after": 1
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 7,
+     "rules": 3,
+     "examples": [
+      [
+       "ELINE",
+       "EILEEN"
+      ],
+      [
+       "CANO",
+       "CANOE"
+      ],
+      [
+       "JANE",
+       "JEANNE"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "EILEEN",
+      "I'M",
+      "CANOE",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "TOMORROW"
+     ]
+    },
+    "rules": {
+     "phrases": 7,
+     "rules": 3,
+     "examples": [
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "ELINE",
+       "EILEEN"
+      ],
+      [
+       "CANO",
+       "CANOE"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "EILEEN",
+      "I'M",
+      "CANOE",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "TOMORROW"
+     ]
+    },
+    "both": {
+     "phrases": 7,
+     "rules": 3,
+     "examples": [
+      [
+       "ELINE",
+       "EILEEN"
+      ],
+      [
+       "CANO",
+       "CANOE"
+      ],
+      [
+       "JANE",
+       "JEANNE"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "EILEEN",
+      "I'M",
+      "CANOE",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "TOMORROW"
+     ]
+    }
+   },
+   "seconds": 86.9,
+   "accent": "Hindi",
+   "sex": "F",
+   "split": "test"
+  },
+  {
+   "speaker": "HKK",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 428,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 428,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 436,
+      "words": 2654,
+      "learned_seen": 1,
+      "learned_right_before": 1,
+      "learned_right_after": 1
+     },
+     "100": {
+      "errors": 436,
+      "words": 2654,
+      "learned_seen": 6,
+      "learned_right_before": 5,
+      "learned_right_after": 5
+     },
+     "200": {
+      "errors": 431,
+      "words": 2654,
+      "learned_seen": 62,
+      "learned_right_before": 50,
+      "learned_right_after": 55
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 428,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 428,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 428,
+      "words": 2654,
+      "learned_seen": 1,
+      "learned_right_before": 1,
+      "learned_right_after": 1
+     },
+     "100": {
+      "errors": 428,
+      "words": 2654,
+      "learned_seen": 6,
+      "learned_right_before": 5,
+      "learned_right_after": 5
+     },
+     "200": {
+      "errors": 426,
+      "words": 2654,
+      "learned_seen": 62,
+      "learned_right_before": 50,
+      "learned_right_after": 51
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 428,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 428,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 436,
+      "words": 2654,
+      "learned_seen": 1,
+      "learned_right_before": 1,
+      "learned_right_after": 1
+     },
+     "100": {
+      "errors": 436,
+      "words": 2654,
+      "learned_seen": 6,
+      "learned_right_before": 5,
+      "learned_right_after": 5
+     },
+     "200": {
+      "errors": 431,
+      "words": 2654,
+      "learned_seen": 62,
+      "learned_right_before": 50,
+      "learned_right_after": 55
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 16,
+     "rules": 5,
+     "examples": [
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "CRACKSON",
+       "GREGSON"
+      ],
+      [
+       "PHILIPH",
+       "PHILIP"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "GREGSON",
+      "HIS",
+      "UP",
+      "HAD",
+      "I'LL",
+      "FOREVER",
+      "LETTER",
+      "ASLEEP",
+      "LITTLE",
+      "FIFTH",
+      "JEANNE"
+     ]
+    },
+    "rules": {
+     "phrases": 17,
+     "rules": 6,
+     "examples": [
+      [
+       "JEAN",
+       "JEANNE"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "CRACKSON",
+       "GREGSON"
+      ],
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "JEANNE",
+      "GREGSON",
+      "HIS",
+      "UP",
+      "HAD",
+      "I'LL",
+      "FOREVER",
+      "LETTER",
+      "ASLEEP",
+      "LITTLE",
+      "FIFTH"
+     ]
+    },
+    "both": {
+     "phrases": 16,
+     "rules": 5,
+     "examples": [
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "CRACKSON",
+       "GREGSON"
+      ],
+      [
+       "PHILIPH",
+       "PHILIP"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "PHILIP",
+      "GREGSON",
+      "HIS",
+      "UP",
+      "HAD",
+      "I'LL",
+      "FOREVER",
+      "LETTER",
+      "ASLEEP",
+      "LITTLE",
+      "FIFTH",
+      "JEANNE"
+     ]
+    }
+   },
+   "seconds": 108.7,
+   "accent": "Korean",
+   "sex": "M",
+   "split": "test"
+  },
+  {
+   "speaker": "HJK",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 192,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 192,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 190,
+      "words": 2654,
+      "learned_seen": 2,
+      "learned_right_before": 0,
+      "learned_right_after": 2
+     },
+     "100": {
+      "errors": 190,
+      "words": 2654,
+      "learned_seen": 3,
+      "learned_right_before": 1,
+      "learned_right_after": 3
+     },
+     "200": {
+      "errors": 191,
+      "words": 2654,
+      "learned_seen": 10,
+      "learned_right_before": 7,
+      "learned_right_after": 8
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 192,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 192,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 190,
+      "words": 2654,
+      "learned_seen": 2,
+      "learned_right_before": 0,
+      "learned_right_after": 2
+     },
+     "100": {
+      "errors": 190,
+      "words": 2654,
+      "learned_seen": 3,
+      "learned_right_before": 1,
+      "learned_right_after": 3
+     },
+     "200": {
+      "errors": 190,
+      "words": 2654,
+      "learned_seen": 4,
+      "learned_right_before": 1,
+      "learned_right_after": 3
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 192,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 192,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 190,
+      "words": 2654,
+      "learned_seen": 2,
+      "learned_right_before": 0,
+      "learned_right_after": 2
+     },
+     "100": {
+      "errors": 190,
+      "words": 2654,
+      "learned_seen": 3,
+      "learned_right_before": 1,
+      "learned_right_after": 3
+     },
+     "200": {
+      "errors": 191,
+      "words": 2654,
+      "learned_seen": 10,
+      "learned_right_before": 7,
+      "learned_right_after": 8
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 12,
+     "rules": 5,
+     "examples": [
+      [
+       "JAN",
+       "JEANNE"
+      ],
+      [
+       "I WILL",
+       "I'LL"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "GRAXTON",
+       "GREGSON"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "GREGSON",
+      "EILEEN",
+      "I'LL",
+      "FOREVER",
+      "SHOT",
+      "WILL",
+      "BLOOD",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "FOREMAN",
+      "TOMORROW"
+     ]
+    },
+    "rules": {
+     "phrases": 11,
+     "rules": 7,
+     "examples": [
+      [
+       "GRAGSON",
+       "GREGSON"
+      ],
+      [
+       "JAN",
+       "JEANNE"
+      ],
+      [
+       "I WILL",
+       "I'LL"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "GRAXTON",
+       "GREGSON"
+      ],
+      [
+       "JEN",
+       "JEANNE"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "GREGSON",
+      "EILEEN",
+      "I'LL",
+      "FOREVER",
+      "SHOT",
+      "BLOOD",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "FOREMAN",
+      "TOMORROW"
+     ]
+    },
+    "both": {
+     "phrases": 12,
+     "rules": 5,
+     "examples": [
+      [
+       "JAN",
+       "JEANNE"
+      ],
+      [
+       "I WILL",
+       "I'LL"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "GRAXTON",
+       "GREGSON"
+      ],
+      [
+       "WORSHIPPED",
+       "WORSHIPED"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "GREGSON",
+      "EILEEN",
+      "I'LL",
+      "FOREVER",
+      "SHOT",
+      "WILL",
+      "BLOOD",
+      "MACDOUGALL",
+      "WORSHIPED",
+      "FOREMAN",
+      "TOMORROW"
+     ]
+    }
+   },
+   "seconds": 92.7,
+   "accent": "Korean",
+   "sex": "F",
+   "split": "test"
+  },
+  {
+   "speaker": "ERMS",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 11,
+      "learned_right_before": 11,
+      "learned_right_after": 11
+     },
+     "100": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 13,
+      "learned_right_before": 12,
+      "learned_right_after": 12
+     },
+     "200": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 17,
+      "learned_right_before": 14,
+      "learned_right_after": 15
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 11,
+      "learned_right_before": 11,
+      "learned_right_after": 11
+     },
+     "100": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 13,
+      "learned_right_before": 12,
+      "learned_right_after": 12
+     },
+     "200": {
+      "errors": 394,
+      "words": 2654,
+      "learned_seen": 17,
+      "learned_right_before": 14,
+      "learned_right_after": 16
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 11,
+      "learned_right_before": 11,
+      "learned_right_after": 11
+     },
+     "100": {
+      "errors": 397,
+      "words": 2654,
+      "learned_seen": 13,
+      "learned_right_before": 12,
+      "learned_right_after": 12
+     },
+     "200": {
+      "errors": 395,
+      "words": 2654,
+      "learned_seen": 17,
+      "learned_right_before": 14,
+      "learned_right_after": 16
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 14,
+     "rules": 5,
+     "examples": [
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "AILING",
+       "EILEEN"
+      ],
+      [
+       "CANOY",
+       "CANOE"
+      ],
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "GREGSON",
+      "FOREVER",
+      "ONE",
+      "MEN",
+      "DOG",
+      "STARED",
+      "EILEEN",
+      "CANOE",
+      "THROUGH",
+      "MACDOUGALL",
+      "WORSHIPED"
+     ]
+    },
+    "rules": {
+     "phrases": 14,
+     "rules": 7,
+     "examples": [
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "JEAN",
+       "JEANNE"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "AILING",
+       "EILEEN"
+      ],
+      [
+       "CANOY",
+       "CANOE"
+      ],
+      [
+       "JING",
+       "JEANNE"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "GREGSON",
+      "EILEEN",
+      "FOREVER",
+      "ONE",
+      "MEN",
+      "DOG",
+      "STARED",
+      "CANOE",
+      "THROUGH",
+      "MACDOUGALL",
+      "WORSHIPED"
+     ]
+    },
+    "both": {
+     "phrases": 14,
+     "rules": 5,
+     "examples": [
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "AILING",
+       "EILEEN"
+      ],
+      [
+       "CANOY",
+       "CANOE"
+      ],
+      [
+       "JANE",
+       "JEANNE"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "GREGSON",
+      "FOREVER",
+      "ONE",
+      "MEN",
+      "DOG",
+      "STARED",
+      "EILEEN",
+      "CANOE",
+      "THROUGH",
+      "MACDOUGALL",
+      "WORSHIPED"
+     ]
+    }
+   },
+   "seconds": 108.0,
+   "accent": "Spanish",
+   "sex": "M",
+   "split": "test"
+  },
+  {
+   "speaker": "PNV",
+   "bonus": 3.0,
+   "min_rule": 2,
+   "min_phrase": 2,
+   "curve": {
+    "bias": {
+     "0": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 349,
+      "words": 2654,
+      "learned_seen": 4,
+      "learned_right_before": 3,
+      "learned_right_after": 3
+     },
+     "200": {
+      "errors": 347,
+      "words": 2654,
+      "learned_seen": 12,
+      "learned_right_before": 8,
+      "learned_right_after": 9
+     }
+    },
+    "rules": {
+     "0": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 4,
+      "learned_right_before": 3,
+      "learned_right_after": 3
+     },
+     "200": {
+      "errors": 344,
+      "words": 2654,
+      "learned_seen": 12,
+      "learned_right_before": 8,
+      "learned_right_after": 9
+     }
+    },
+    "both": {
+     "0": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "25": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "50": {
+      "errors": 346,
+      "words": 2654,
+      "learned_seen": 0,
+      "learned_right_before": 0,
+      "learned_right_after": 0
+     },
+     "100": {
+      "errors": 349,
+      "words": 2654,
+      "learned_seen": 4,
+      "learned_right_before": 3,
+      "learned_right_after": 3
+     },
+     "200": {
+      "errors": 345,
+      "words": 2654,
+      "learned_seen": 12,
+      "learned_right_before": 8,
+      "learned_right_after": 10
+     }
+    }
+   },
+   "memory": {
+    "bias": {
+     "phrases": 13,
+     "rules": 2,
+     "examples": [
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "GREGSON",
+      "DOWN",
+      "FOREVER",
+      "MEN",
+      "LIKE",
+      "JEANNE",
+      "PIERRE'S",
+      "GLOW",
+      "PIERRE",
+      "MACDOUGALL",
+      "THORPE",
+      "WORSHIPED"
+     ]
+    },
+    "rules": {
+     "phrases": 13,
+     "rules": 4,
+     "examples": [
+      [
+       "JEAN",
+       "JEANNE"
+      ],
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "GRETSON",
+       "GREGSON"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "JEANNE",
+      "GREGSON",
+      "DOWN",
+      "PIERRE",
+      "FOREVER",
+      "MEN",
+      "LIKE",
+      "PIERRE'S",
+      "GLOW",
+      "MACDOUGALL",
+      "THORPE",
+      "WORSHIPED"
+     ]
+    },
+    "both": {
+     "phrases": 13,
+     "rules": 2,
+     "examples": [
+      [
+       "FOR EVER",
+       "FOREVER"
+      ],
+      [
+       "TO MORROW",
+       "TOMORROW"
+      ]
+     ],
+     "top_words": [
+      "GREGSON",
+      "DOWN",
+      "FOREVER",
+      "MEN",
+      "LIKE",
+      "JEANNE",
+      "PIERRE'S",
+      "GLOW",
+      "PIERRE",
+      "MACDOUGALL",
+      "THORPE",
+      "WORSHIPED"
+     ]
+    }
+   },
+   "seconds": 107.9,
+   "accent": "Vietnamese",
+   "sex": "F",
+   "split": "dev"
+  }
+ ]
+}

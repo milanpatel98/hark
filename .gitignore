@@ -1,0 +1,10 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+models/
+speech/
+web/node_modules/
+web/dist/
+web/public/model/*.onnx
+.DS_Store
+web/public/ort/
