@@ -63,31 +63,44 @@ def export() -> None:
     spell = {w: pieces.phrase(w) for w in ["PHILIP", "BROTHELS", "STELLA", "HESTER PRYNNE", "QWXZ"]}
     (WEB / "test").mkdir(exist_ok=True)
     (WEB / "test" / "expected.json").write_text(json.dumps({"bias": BIAS_WORDS, "cases": cases, "memory": log, "spell": spell}))
+    export_results()
     print(f"model and {len(cases)} expected cases -> {WEB}")
 
 
-def export_results(browser_rtf: float | None = None) -> dict | None:
-    """Summarise results/accents.json for the website's Results screen."""
+def _totals(path: Path, method: str = "both") -> dict:
+    data = json.loads(path.read_text())
+    last = str(max(int(k) for k in data["speakers"][0]["curve"][method]))
+    t = {"errors_before": 0, "errors_after": 0, "words": 0, "learned_seen": 0, "learned_wrong_before": 0, "learned_wrong_after": 0}
+    for s in data["speakers"]:
+        if s["split"] != "test":
+            continue
+        b, a = s["curve"][method]["0"], s["curve"][method][last]
+        t["errors_before"] += b["errors"]; t["errors_after"] += a["errors"]; t["words"] += b["words"]
+        t["learned_seen"] += a["learned_seen"]
+        t["learned_wrong_before"] += a["learned_seen"] - a["learned_right_before"]
+        t["learned_wrong_after"] += a["learned_seen"] - a["learned_right_after"]
+    t["fixes"] = int(last)
+    t["speakers"] = sum(1 for s in data["speakers"] if s["split"] == "test")
+    return t
+
+
+def export_results() -> dict | None:
+    """Summarise results/accents.json (and the first run, kept as it happened) for the Results screen."""
     src = ROOT / "results" / "accents.json"
     if not src.exists():
         return None
     data = json.loads(src.read_text())
     last = str(max(int(k) for k in data["speakers"][0]["curve"]["both"]))
-    rows, E0 = [], [0, 0]
-    E1 = [0, 0]
+    rows = []
     for s in data["speakers"]:
-        c = s["curve"]["both"]
-        b, a = c["0"], c[last]
+        b, a = s["curve"]["both"]["0"], s["curve"]["both"][last]
         rows.append({"speaker": s["speaker"], "accent": s["accent"], "sex": s["sex"], "split": s["split"],
-                     "before": b[0] / b[1], "after": a[0] / a[1]})
-        if s["split"] == "test":
-            E0 = [E0[0] + b[0], E0[1] + b[1]]
-            E1 = [E1[0] + a[0], E1[1] + a[1]]
-    before, after = E0[0] / E0[1], E1[0] / E1[1]
-    summary = {"n": int(last), "before": before, "after": after, "relative": 1 - after / before,
-               "rtf": browser_rtf if browser_rtf is not None else data.get("rtf", 0.25)}
+                     "before": b["errors"] / b["words"], "after": a["errors"] / a["words"]})
     rows.sort(key=lambda r: (r["split"] != "test", -r["before"]))
-    out = {"summary": summary, "speakers": rows, "settings": data["settings"]}
+    out = {"summary": _totals(src), "speakers": rows, "settings": data["settings"]}
+    first = ROOT / "results" / "accents-first-run.json"
+    if first.exists():
+        out["first_run"] = _totals(first)
     (WEB / "public" / "data").mkdir(parents=True, exist_ok=True)
     (WEB / "public" / "data" / "results.json").write_text(json.dumps(out))
     return out

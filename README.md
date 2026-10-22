@@ -4,13 +4,30 @@
 
 Small on-device speech models make far more mistakes on accented English than on the voices they were trained on. Hark captions speech live in the browser, with nothing sent to a server. When you correct a caption, it learns the words you say that it keeps getting wrong, and listens harder for them next time. Nothing is retrained; it learns from plain counts that stay in your browser.
 
-**[Try it](https://milanpatel98.github.io/hark/)**: works on a phone or a computer. "Try a sample" plays a real accented recording if you don't want to use the microphone.
+**[Try it](https://milanpatel98.github.io/hark/)**: works on a phone or a computer. "Try a sample" plays a real Arabic-accented speaker. Hark hears "Greyson … re entered". Correct it twice and the third time it writes "Gregson … reentered".
 
 ---
 
 ## Results
 
-__RESULTS__
+Eight non-native speakers held out from all tuning: Arabic, Mandarin, Hindi, Korean and Spanish, 21,196 words. Each one "corrects" 200 sentences, then is measured on 300 sentences they never corrected.
+
+| | Words wrong, before | After 200 fixes |
+| --- | --- | --- |
+| **All words** | 16.4% | **16.3%** |
+| **Rare words the speaker had corrected** (names like Gregson, Jeanne, Eileen) | 18 of 22 | **13 of 22** |
+
+Read honestly:
+- **Learning never made captions worse overall.** That is the point of the design: Hark only listens for rare words, and only once you have corrected them twice.
+- **It does fix the words you teach it.** Misses on those names fell by more than a quarter.
+- **The evidence is thin.** The test sentences repeat few rare words, so there were only 22 occurrences to measure. Expect the effect to show in real use, where people say the same names and terms again and again, but this experiment cannot prove that.
+
+**The first run, kept as it happened** (`results/accents-first-run.json`):
+- Listening for every missed word made overall captions worse, 16.4% → 16.8%. Hark had started inserting common words people had once corrected ("were", "not").
+- It did cut misses on corrected words from 108 to 77 of 352.
+- **The fix:** list only words rarer than Zipf 4 in everyday English (wordfreq), and only after two misses. The settings were chosen again on the two development speakers only, and the test speakers were run once more.
+
+Per speaker, accuracy without any learning ranges from 7.2% words wrong (Korean, HJK) to 25.6% (Mandarin, LXC). The small on-device model is far less accurate for some accents than others, which is the gap Hark is trying to close.
 
 ## How it works
 
@@ -42,12 +59,12 @@ __RESULTS__
 
 ## The experiment
 
-- **Speakers:** non-native speakers from [L2-ARCTIC](https://psi.engr.tamu.edu/l2-arctic-corpus/) (Arabic, Mandarin, Hindi, Korean, Spanish and Vietnamese), each reading the same ARCTIC sentences.
+- **Speakers:** 10 non-native speakers from [L2-ARCTIC](https://psi.engr.tamu.edu/l2-arctic-corpus/), each reading the same ARCTIC sentences: Arabic, Mandarin, Hindi, Korean and Spanish (the test set), plus Vietnamese (PNV) and a second Arabic speaker (ABA) for tuning.
 - **Corrections:** for each speaker, the first 200 sentences are "corrected" in order, using the true transcript as the correction. Hark learns as it goes, from what it actually showed at the time.
 - **Measurement:** the last 300 sentences are never corrected, and are only used to measure:
   - word error rate over all words;
   - accuracy on the exact occurrences of words the speaker had corrected, before learning and after.
-- **Settings:** the bias strength, and how often a word must be missed before it is listed, are chosen on two development speakers (ABA, PNV) with one rule: the most gain on learned words that does not raise overall errors. Every other speaker is a held-out test.
+- **Settings:** the bias strength, how often a word must be missed before it is listed, and how rare it must be are chosen on two development speakers (ABA, PNV) with one rule: the most gain on learned words that does not raise overall errors. Every other speaker is a held-out test. Chosen: bonus 3.0 per word piece, 2 misses, Zipf below 4.0 (`results/tuning.json`).
 - **Audio:** each recording gets 0.66 s of silence in front, because the recordings start speaking on the first sample and a live microphone never does. On the development speakers this lowered errors from 17.8% to 13.1% (ABA) and 14.8% to 14.5% (PNV).
 
 ## Run it
@@ -70,7 +87,7 @@ To rerun the experiment, download the L2-ARCTIC speakers listed in `hark/corpus.
 
 ## Limitations
 
-- **The gain is narrow.** Learning helps on the words you corrected and on little else. People repeat their own names and terms, so it matters in use, but read-aloud test sentences mostly don't repeat them.
+- **The gain is narrow, and lightly measured.** Learning helps on rare words you corrected and on nothing else, and the test had only 22 such occurrences. Two planned speakers and the native-English control set were not downloaded.
 - **No speaker labels.** Hark doesn't tell speakers apart. A line break means a pause, not a new person.
 - **English only, one model.** The model is trained on read audiobooks and podcasts, so noisy rooms and fast conversation are harder.
 - **First load is about 110 MB.** After that the browser caches it.

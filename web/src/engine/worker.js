@@ -25,7 +25,11 @@ async function newLine() {
   lineStart = stream.decoded;
 }
 
-onmessage = async ({ data }) => {
+// one message at a time, in order: audio, a new phrase list and stop must never interleave
+let queue = Promise.resolve();
+onmessage = ({ data }) => { queue = queue.then(() => handle(data)).catch((e) => postMessage({ type: "error", message: String(e) })); };
+
+async function handle(data) {
   if (data.type === "load") return load(data.base);
   if (data.type === "bias") {
     const phrases = data.words.map((w) => pieces.phrase(w)).filter(Boolean);
@@ -58,4 +62,4 @@ onmessage = async ({ data }) => {
     postMessage({ type: "done", audioSec: stream.samples / 16000, busyMs, wallMs: performance.now() - started });
     stream = null;
   }
-};
+}

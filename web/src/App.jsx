@@ -5,7 +5,7 @@ import { Memory } from "./engine/adapt.js";
 const BONUS = 3.0;      // phrase-list strength, per word piece
 const MIN_PHRASE = 2;   // a word must be missed this many times before Hark listens for it
 const MIN_RULE = 2;     // a mistake must be corrected this many times before Hark rewrites it
-const MAX_ZIPF = 5.0;   // only words rarer than this (wordfreq Zipf) are listened for: names, places, jargon
+const MAX_ZIPF = 4.0;   // only words rarer than this (wordfreq Zipf) are listened for: names, places, jargon
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* private mode: keep it in memory only */ } },
@@ -171,7 +171,7 @@ function Dock({ page }) {
     <nav className="dock" aria-label="Main">
       {items.map(([k, label, icon]) => (
         <a key={k} href={`#/${k}`} className={page === k ? "on" : ""} aria-label={label} aria-current={page === k ? "page" : undefined}>
-          <Icon d={icon} size={24} />
+          <Icon d={icon} size={21} />
         </a>
       ))}
     </nav>
@@ -219,15 +219,15 @@ function Home({ engine, onStart }) {
       <div className="home-center">
         <button className={`mic ${loading ? "loading" : ""}`} onClick={() => onStart("mic")} aria-label="Start live captions">
           {loading && <Ring progress={engine.progress} />}
-          <span className="mic-core"><Icon d={I.mic} size={40} /></span>
+          <span className="mic-core"><Icon d={I.mic} size={32} /></span>
         </button>
-        <p className="hint">{loading ? `Getting the speech model ready · ${Math.round(engine.progress * 100)}%` : "Tap to caption"}</p>
+        <p className="hint">{loading ? `${Math.round(engine.progress * 100)}%` : "Tap to caption"}</p>
         <div className="chips">
           <span className="chip" title="Audio never leaves this device"><Icon d={I.lock} /><small>Private</small></span>
           <span className="chip" title="Works offline once loaded"><Icon d={I.plane} /><small>Offline</small></span>
           <span className="chip" title="Learns your words from your fixes"><Icon d={I.spark} /><small>Learns</small></span>
         </div>
-        <button className="pill ghost" onClick={() => onStart("sample")}><Icon d={I.play} size={18} />Try a sample</button>
+        <button className="pill ghost" onClick={() => onStart("sample")}><Icon d={I.play} size={14} />Try a sample</button>
       </div>
     </section>
   );
@@ -356,21 +356,23 @@ function You({ memory, onReset }) {
 function Results({ data }) {
   if (!data) return <section className="screen"><Top title="Results" /><div className="blank"><p>Loading…</p></div></section>;
   if (!data.speakers) return <section className="screen"><Top title="Results" /><div className="blank"><Icon d={I.bars} size={34} /><p>Benchmark in progress</p></div></section>;
-  const { summary, speakers } = data;
+  const { summary: t, speakers, first_run: f } = data;
+  const pc = (e, n) => `${((e / n) * 100).toFixed(1)}%`;
   const max = Math.max(...speakers.map((s) => s.before));
   return (
     <section className="screen">
       <Top title="Results" />
       <div className="hero-num">
-        <b>−{Math.round(summary.relative * 100)}%</b>
-        <small>errors after {summary.n} fixes</small>
+        <b>{t.learned_wrong_before}→{t.learned_wrong_after}</b>
+        <small>misses on names you had corrected</small>
       </div>
       <div className="duo">
-        <div><b>{(summary.before * 100).toFixed(1)}%</b><small>word errors before</small></div>
-        <div><b>{(summary.after * 100).toFixed(1)}%</b><small>after</small></div>
-        <div><b>{summary.rtf.toFixed(2)}×</b><small>compute per second of audio</small></div>
+        <div><b>{pc(t.errors_before, t.words)}</b><small>words wrong, before</small></div>
+        <div><b>{pc(t.errors_after, t.words)}</b><small>after {t.fixes} fixes</small></div>
+        <div><b>{t.speakers}</b><small>accented speakers, held out</small></div>
       </div>
-      <h2 className="label"><Icon d={I.you} size={16} />Each speaker, before → after</h2>
+      <p className="note"><Icon d={I.check} size={16} />Never worse overall · learns only rare words</p>
+      <h2 className="label"><Icon d={I.you} size={16} />Each speaker, words wrong before → after</h2>
       <div className="bars">
         {speakers.map((s) => (
           <div key={s.speaker} className={`bar-row ${s.split}`}>
@@ -379,13 +381,15 @@ function Results({ data }) {
               <i className="before" style={{ width: `${(s.before / max) * 100}%` }} />
               <i className="after" style={{ width: `${(s.after / max) * 100}%` }} />
             </span>
-            <span className="num">{(s.before * 100).toFixed(0)}→{(s.after * 100).toFixed(0)}</span>
+            <span className="num">{(s.before * 100).toFixed(1)}→{(s.after * 100).toFixed(1)}</span>
           </div>
         ))}
       </div>
+      {f && (
+        <p className="note"><Icon d={I.spark} size={16} />First run listened for common words too: {pc(f.errors_before, f.words)} → {pc(f.errors_after, f.words)} overall. Fixed.</p>
+      )}
       <p className="credit">
-        Speech: <a href="https://psi.engr.tamu.edu/l2-arctic-corpus/">L2-ARCTIC</a> (CC BY-NC 4.0) and{" "}
-        <a href="http://festvox.org/cmu_arctic/">CMU ARCTIC</a>. Model: k2-fsa Zipformer (Apache-2.0).
+        Speech: <a href="https://psi.engr.tamu.edu/l2-arctic-corpus/">L2-ARCTIC</a> (CC BY-NC 4.0). Model: k2-fsa Zipformer (Apache-2.0).
       </p>
     </section>
   );
@@ -461,7 +465,7 @@ export default function App() {
     } else {
       const ctl = new AbortController();
       stopRef.current = () => { ctl.abort(); engine.stop(); };
-      await playSample("./samples/l2arctic-ska-a0010.wav", engine.push, onLevel, ctl.signal);
+      await playSample("./samples/l2arctic-ska-a0049.wav", engine.push, onLevel, ctl.signal);
       if (!ctl.signal.aborted) engine.stop();
     }
   }, [engine, memory, finishSession]);
